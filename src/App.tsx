@@ -53,7 +53,7 @@ function SystemScene({kind, theme, phase, running}:{kind:Kind;theme:Theme;phase:
   });
   scene.clearColor=themes[theme].bg;engine.runRenderLoop(()=>scene.render());const resize=()=>engine.resize();window.addEventListener('resize',resize);
   return()=>{window.removeEventListener('resize',resize);scene.dispose();engine.dispose()};
- },[]);
+ },[kind]);
  return <canvas className="scene-canvas" ref={canvas} aria-label="Interactive 3D system model; drag to rotate and scroll to zoom"/>;
 }
 
